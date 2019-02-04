@@ -18,6 +18,6 @@ chmod 600 "$SSH_PATH/deploy_key.pub"
 eval $(ssh-agent)
 ssh-add "$SSH_PATH/deploy_key"
 
-ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
+# ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
 
 sh -c "rsync -r --delete-after --quiet -e 'ssh -o StrictHostKeyChecking=no' $*"
