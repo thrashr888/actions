@@ -35,3 +35,20 @@ action "Deploy with rsync" {
   ]
 }
 ````
+
+
+## tfe-cli
+
+
+````
+action "List TFE Workspaces" {
+  uses = "thrashr888/actions/tfe-cli@master"
+  secrets = [
+    "TFE_TOKEN",
+  ]
+  env = {
+    TFE_ORG = "my-org"
+  }
+  args = ["workspace list"]
+}
+````
