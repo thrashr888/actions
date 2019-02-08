@@ -25,6 +25,7 @@ action "Run deploy script" {
 action "Deploy with rsync" {
   uses = "thrashr888/actions/rsync@master"
   secrets = [
+    "HOST",
     "SSH_KEY",
     "PUBLIC_KEY",
   ]
