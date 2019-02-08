@@ -8,7 +8,7 @@ A collection of GitHub actions.
 action "Run deploy script" {
   uses = "thrashr888/actions/ssh@master"
   secrets = [
-    "PRIVATE_KEY",
+    "SSH_KEY",
     "PUBLIC_KEY",
     "HOST",
     "USER"
@@ -25,7 +25,7 @@ action "Run deploy script" {
 action "Deploy with rsync" {
   uses = "thrashr888/actions/rsync@master"
   secrets = [
-    "PRIVATE_KEY",
+    "SSH_KEY",
     "PUBLIC_KEY",
   ]
   args = [
