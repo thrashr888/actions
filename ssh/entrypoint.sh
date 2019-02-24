@@ -26,5 +26,5 @@ ssh-add "$SSH_PATH/deploy_key"
 echo "==> ssh-keyscan -t rsa $HOST >> \"$SSH_PATH/known_hosts\""
 ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
 
-echo "==> ssh -A -tt -o 'StrictHostKeyChecking=no' -vv -p ${PORT:-22} $USER@$HOST \"$*\""
-ssh -A -tt -o 'StrictHostKeyChecking=no' -vv -p ${PORT:-22} $USER@$HOST "$*"
+echo "==> ssh -A -tt -o 'StrictHostKeyChecking=no' -p ${PORT:-22} $USER@$HOST \"$*\""
+ssh -A -tt -o 'StrictHostKeyChecking=no' -p ${PORT:-22} $USER@$HOST "$*"
