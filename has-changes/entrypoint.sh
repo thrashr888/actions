@@ -2,11 +2,9 @@
 
 set -e
 
-$string1 = $*
-
 git diff --name-only --diff-filter=AMDR --cached HEAD^ > test.out
 
-if grep -qF "$string1" test.out;then
+if grep -qF "$*" test.out;then
     echo "matched $string1" 
     exit 78
 else
