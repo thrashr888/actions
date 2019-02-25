@@ -2,7 +2,7 @@
 
 set -e
 
-$string1=$*
+$string1 = $*
 
 git diff --name-only --diff-filter=AMDR --cached HEAD^ > test.out
 
