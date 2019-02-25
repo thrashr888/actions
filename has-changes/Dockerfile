@@ -9,7 +9,7 @@ LABEL "com.github.actions.description"="Use git to check latest changes"
 LABEL "com.github.actions.icon"="server"
 LABEL "com.github.actions.color"="grey"
 
-RUN apk update && apk add --no-cache bash
+RUN apk update && apk add --no-cache bash git
 
 ADD entrypoint.sh /entrypoint.sh
 
