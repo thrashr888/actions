@@ -9,6 +9,8 @@ LABEL "com.github.actions.description"="Use git to check latest changes"
 LABEL "com.github.actions.icon"="server"
 LABEL "com.github.actions.color"="grey"
 
-RUN apk update && apk add --no-cache openssh-client bash
+RUN apk update && apk add --no-cache bash
 
-ENTRYPOINT ["git diff --name-only --diff-filter=AMDR --cached HEAD^"]
+ADD entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
